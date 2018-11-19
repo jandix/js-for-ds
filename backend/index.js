@@ -3,9 +3,14 @@ const express       = require('express');
 const morganLogger  = require('morgan');
 const bodyParser    = require('body-parser');
 const http          = require('http');
+const cors          = require('cors');
 
 // set up the express app
 const app = express();
+
+// allow cors
+app.use(cors());
+app.options('*', cors());
 
 // log requests to the console
 app.use(morganLogger('dev'));
