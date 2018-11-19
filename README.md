@@ -1,1 +1,8 @@
-# js-for-ds
+# JavaScript for Data Scientist
+
+## Backend
+
+### Install
+
+
+## Frontend
