@@ -1,0 +1,65 @@
+---
+title: "Hackathon"
+subtitle: "Mögliche Technische Umsetzung"
+author: "Jan Dix"
+date: "02/08/2018"
+output: 
+  ioslides_presentation:
+    css: ./assets/css/style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Agenda
+
+### A) Mögliche Designs
+1. Klassiker `r icon::fa("python")` + `r icon::fa("vuejs")` + `r icon::fa("chart-area")`
+2. Dash `r icon::fa("python")`
+3. Shiny `r icon::fa("r-project")`
+
+### B) Team Up 
+
+## Klassiker {.columns-2}
+
+### Backend `r icon::fa("python")`
+
+- REST API mit Python 
+
+### Frontend `r icon::fa("vuejs")` + `r icon::fa("chart-area")`
+
+- Web Application mit Vue JS 
+- D3/Chart/Plotly
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/klassiker.jpg')
+```
+
+
+## Dash
+
+- komplett in `r icon::fa("python")` 
+
+```{r, out.width='50%', fig.align='left'}
+knitr::include_graphics('images/dash.jpg')
+```
+
+## Shiny
+
+- komplett in `r icon::fa("r-project")`
+
+```{r, out.width='50%', fig.align='left'}
+knitr::include_graphics('images/shiny.jpg')
+```
+
+## Aufteilung in Teams
+
+### SQL Team
+- Wie lösen wir die Fragestellung?
+
+### Backend Team
+- Wie können wir die Daten umwandeln, sodass wir sie darstellen können?
+
+### Frontend/Design Team
+- Wie stellen wir die Daten dar?
