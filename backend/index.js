@@ -5,6 +5,12 @@ const bodyParser    = require('body-parser');
 const http          = require('http');
 const cors          = require('cors');
 
+// import data
+const timeline      = require('./data/timeline');
+const facebook      = require('./data/facebook');
+const twitter       = require('./data/twitter');
+const mailchimp     = require('./data/mailchimp');
+
 // set up the express app
 const app = express();
 
@@ -19,6 +25,17 @@ app.use(morganLogger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// define timeline endpoint
+app.get('/timeline', (req, res) => {
+    res.status(200).send({
+        status: {
+            code: 200,
+            message: 'OK!'
+        },
+        data: timeline
+    });
+});
+
 // define twitter endpoint
 app.get('/twitter', (req, res) => {
     res.status(200).send({
@@ -26,7 +43,7 @@ app.get('/twitter', (req, res) => {
             code: 200,
             message: 'OK!'
         },
-        data: [1, 2, 3, 4, 4]
+        data: twitter
     });
 });
 
@@ -37,7 +54,7 @@ app.get('/facebook', (req, res) => {
             code: 200,
             message: 'OK!'
         },
-        data: [2, 2, 2, 4, 4]
+        data: facebook
     });
 });
 
@@ -48,7 +65,7 @@ app.get('/mailchimp', (req, res) => {
             code: 200,
             message: 'OK!'
         },
-        data: [1, 1, 1, 2, 2]
+        data: mailchimp
     });
 });
 
