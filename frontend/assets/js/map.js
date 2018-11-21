@@ -3,6 +3,11 @@ $lineChartContainer = $('div#chart-container');
 $mapContainer       = $('div#map-container');
 $mapContainer.height($lineChartContainer.height());
 
+// resize map card if window size changes
+$(window).on('resize', function () {
+    $mapContainer.height($lineChartContainer.height());
+});
+
 // define size properties (does not matter but needed for calculations)
 var w = 1200;
 var h = 600;
@@ -60,7 +65,6 @@ $.get('https://api.correlaid.org/local-chapters')
             };
             $.get(baseURL, params)
                 .done(function (response) {
-                    console.log(response);
                     addDataPoint(circles, projection, response[0].lon, response[0].lat, city.size);
                 });
         });

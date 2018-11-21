@@ -2,7 +2,7 @@
   {
     "city": "Bonn",
     "country": "Germany",
-    "size": 15
+    "size": 2
   },
   {
     "city": "Berlin",
@@ -10,8 +10,43 @@
     "size": 100
   },
   {
+    "city": "Dortmund",
+    "country": "Germany",
+    "size": 15
+  },
+  {
     "city": "Amsterdam",
     "country": "Netherlands",
     "size": 50
+  },
+  {
+    "city": "Mannheim",
+    "country": "Germany",
+    "size": 50
+  },
+  {
+    "city": "Bremen",
+    "country": "Germany",
+    "size": 5
+  },
+  {
+    "city": "Düsseldorf",
+    "country": "Germany",
+    "size": 10
+  },
+  {
+    "city": "Amsterdam",
+    "country": "Germany",
+    "size": 50
+  },
+  {
+    "city": "München",
+    "country": "Germany",
+    "size": 18
+  },
+  {
+    "city": "Frankfurt",
+    "country": "Germany",
+    "size": 25
   }
 ]
