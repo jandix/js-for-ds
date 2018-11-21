@@ -10,6 +10,8 @@ const timeline      = require('./data/timeline');
 const facebook      = require('./data/facebook');
 const twitter       = require('./data/twitter');
 const mailchimp     = require('./data/mailchimp');
+const europeGEO     = require('./data/europe.geo');
+const localChapters = require('./data/localchapters');
 
 // set up the express app
 const app = express();
@@ -66,6 +68,28 @@ app.get('/mailchimp', (req, res) => {
             message: 'OK!'
         },
         data: mailchimp
+    });
+});
+
+// define europe geo
+app.get('/geo/europe', (req, res) => {
+    res.status(200).send({
+        status: {
+            code: 200,
+            message: 'OK!'
+        },
+        data: europeGEO
+    });
+});
+
+// define local chapter route
+app.get('/local-chapters', (req, res) => {
+    res.status(200).send({
+        status: {
+            code: 200,
+            message: 'OK!'
+        },
+        data: localChapters
     });
 });
 

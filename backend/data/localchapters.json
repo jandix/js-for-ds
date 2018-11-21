@@ -1,0 +1,17 @@
+[
+  {
+    "city": "Bonn",
+    "country": "Germany",
+    "size": 15
+  },
+  {
+    "city": "Berlin",
+    "country": "Germany",
+    "size": 100
+  },
+  {
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "size": 50
+  }
+]

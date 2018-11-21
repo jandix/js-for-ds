@@ -35,19 +35,19 @@
         <div class="row mt-4">
 
             <!-- LINE CHART -->
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 <h5>Outreach</h5>
-                <div class="card-panel grey lighten-4" style="height: 350px;">
+                <div class="card-panel grey lighten-4" id="chart-container">
                     <canvas id="sampleChart"></canvas>
                 </div>
             </div>
             <!-- /END LINE CHART -->
 
             <!-- LOCAL CHAPTERS MAP -->
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 <h5>Local Chapters</h5>
-                <div class="card-panel grey lighten-4" style="height: 350px;">
-                    <canvas id="lc-map"></canvas>
+                <div class="card-panel grey lighten-4" id="map-container">
+                    <div id="lc-map"></div>
                 </div>
             </div>
             <!-- /END LOCAL CHAPTERS MAP -->
@@ -59,6 +59,7 @@
 
 <!-- DEPENDENCIES -->
 <script src="./assets/vendor/chartjs/chart.bundle.2.7.3.min.js"></script>
+<script src="./assets/vendor/d3/d3.v5.min.js"></script>
 <script src="./assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 <script src="./assets/vendor/materialcss/materialize-1.0.0.min.js"></script>
 <!-- /END DEPENDENCIES -->
@@ -68,84 +69,12 @@
 <script src="./assets/js/functions.js"></script>
 <!-- /END INITIALIZE FUNCTIONS -->
 
-<script>
+<!-- LINE CHART SCRIPT -->
+<script src="./assets/js/line-chart.js"></script>
+<!-- /END LINE CHART SCRIPT -->
 
-    // initialize vars
-    var baseURL = 'http://localhost:8000';
-
-    var ctx = document.getElementById("sampleChart").getContext('2d');
-    var data = {
-        labels: [],
-        datasets: []
-    };
-    var options =  {
-        responsive: true,
-        title: {
-            display: false
-        },
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-        },
-        hover: {
-            mode: 'nearest',
-            intersect: true
-        },
-        elements: {
-            line: {
-                tension: 0, // disables bezier curves
-            }
-        }
-        /*
-        scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Month'
-                }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Value'
-                }
-            }]
-        }
-        */
-    };
-
-    var lineChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: options
-    });
-
-    $.get(baseURL + '/timeline')
-        .done(function (response) {
-            lineChart.data.labels = response.data;
-        });
-
-    $.get(baseURL + '/facebook')
-        .done(function (response) {
-            addDataSet(lineChart, response.data, 'Facebook', '#0e1f56')
-        });
-
-    $.get(baseURL + '/twitter')
-        .done(function (response) {
-            addDataSet(lineChart, response.data, 'Twitter', '#55acee');
-        });
-
-    // YOUR CODE GOES BETWEEN THIS COMMENTS
-    $.get(baseURL + '/mailchimp')
-        .done(function (response) {
-            addDataSet(lineChart, response.data, 'Mailchimp', '#FFA500');
-        });
-
-    // YOUR CODE GOES BETWEEN THIS COMMENTS
-
-
-</script>
+<!-- MAP SCRIPT -->
+<script src="./assets/js/map.js"></script>
+<!-- /END MAP SCRIPT -->
 </body>
 </html>

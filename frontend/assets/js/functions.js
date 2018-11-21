@@ -15,3 +15,15 @@ function addDataSet (chart, data, label, color) {
     ];
     chart.update();
 }
+
+// define function to add a datapoint to the map
+function addDataPoint (context, projection, longitude, latitude, size) {
+
+    if (size > 25) size = 25;
+
+    context.append("circle")
+        .attr("class","circle")
+        .attr("cx", projection([longitude, latitude])[0])
+        .attr("cy", projection([longitude, latitude])[1])
+        .attr("r", size);
+}

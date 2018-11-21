@@ -41,3 +41,15 @@
 .py-1 {
     padding-left: 1rem;
 }
+
+/* ============== MAP FEATURES ============== */
+
+.country {
+    fill: #233140;
+    stroke: #e0cabc;
+    stroke-width: 0.5;
+}
+
+.circle {
+    fill: #92de3f;
+}
