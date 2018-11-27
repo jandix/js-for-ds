@@ -1,7 +1,7 @@
 ---
-title: "Hackathon"
-subtitle: "Mögliche Technische Umsetzung"
-author: "Jan Dix"
+title: "Vom Backend zum Frontend"
+subtitle: "JavaScript for Data Scientists"
+author: "Frie Preu & Jan Dix"
 date: "02/08/2018"
 output: 
   ioslides_presentation:
@@ -12,54 +12,152 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## https://pollev.com/jandix570
+
+1. Was erwartest du vom Workshop?
+2. Welche "Sprachen" sprichst du?
+3. Was für einen Hintergrund hast du? (z.B.: Sozialwissenschaftler*in)
+
 ## Agenda
 
-### A) Mögliche Designs
-1. Klassiker `r icon::fa("python")` + `r icon::fa("vuejs")` + `r icon::fa("chart-area")`
-2. Dash `r icon::fa("python")`
-3. Shiny `r icon::fa("r-project")`
+1. Model
+2. JavaScript
+3. Server (Backend)
+4. Client (Frontend)
 
-### B) Team Up 
-
-## Klassiker {.columns-2}
-
-### Backend `r icon::fa("python")`
-
-- REST API mit Python 
-
-### Frontend `r icon::fa("vuejs")` + `r icon::fa("chart-area")`
-
-- Web Application mit Vue JS 
-- D3/Chart/Plotly
+## Model
 
 ```{r, out.width='100%', fig.align='center'}
-knitr::include_graphics('images/klassiker.jpg')
+knitr::include_graphics('images/communication.svg')
 ```
 
+# JavaScript
 
-## Dash
+## https://pollev.com/jandix570
 
-- komplett in `r icon::fa("python")` 
+1. Was verbindet ihr mit JavaScript?
 
-```{r, out.width='50%', fig.align='left'}
-knitr::include_graphics('images/dash.jpg')
+## Warum eigentlich JavaScript?
+
+
+
+## Ein paar Grundlagen (1)
+
+```js
+// variables are always definded using 'var'
+var x           = 20;
+var fruit       = 'Apples';
+var otherFruits = 'Pears';
+
+// simple math
+var y = x * 20;
+var z = y + 30 / 10.5;
+var m = Math.round(z);
+
+// string manipulation
+var sentence = fruit  + ' are not ' + otherFruits + '!';
+
+// simple debuging in browser
+console.log(fruits);
 ```
 
-## Shiny
+## Ein paar Grundlagen (2)
 
-- komplett in `r icon::fa("r-project")`
+```js
+// define arrays
+var twitterFollower = [1, 2, 3, 4];
+// access n-th item in array
+var follower = twitterFollower[2];
+// add item to the end of an array
+twitterFollower.push(3);
 
-```{r, out.width='50%', fig.align='left'}
-knitr::include_graphics('images/shiny.jpg')
+// define objects
+var twitterTimeLine = {
+  date:     ['2016-05-18', '2016-05-19', '2016-05-20', '2016-05-21', '2016-05-22'],
+  follower: twitterFollower
+};
+// access elements in an object
+twitterTimeLine.date
+// add new element to an object
+twitterTimeLine.likes = 32;
+``` 
+
+
+## Ein paar Grundlagen (3)
+
+```js
+// map
+twitterTimeLine.parsedDate = twitterTimeLine.date.map(function (e) { return new Date(e) });
+
+// reduce
+twitterTimeLine.followerSum = twitterTimeLine.follower.reduce(function (a, b) { return a + b }, 0)
+``` 
+
+
+## ES6 oder auch der verflixte Internet Explorer
+
+- neue Standards
+- wird nicht vom Internet Explorer (10% Marktanteil) unterstützt (https://netmarketshare.com/)
+- kann durch Compiler/Polyfills erweitert werden (z.B.: Babel)
+- [Kompatibilität nachschauen](http://kangax.github.io/compat-table/es6/)
+
+### Beispiel:
+
+```js
+// define new variables
+let fruit = 'apple';
+const pi = 3.1415; // does not work for childrens of objects
 ```
+## DIY
 
-## Aufteilung in Teams
+1. Initialisiere die Variable `fruits` mit dem Array `['apple', 'mango', 'pear']`.
+2. Füge einen weitere beliebige Frucht zu dem Array `fruits` hinzu.
+3. Erstelle ein Objekt `basket` und füge das Array `fruits` hinzu.
+4. Erstelle ein weiteres Array `price` innerhalb von `basket` mit den Werten `[3, 4, 20, 1]`.
+5. Errechne die Summe des Warenkorbs und speicher sie in der Variablen `total`.
 
-### SQL Team
-- Wie lösen wir die Fragestellung?
+# Server (Backend)
 
-### Backend Team
-- Wie können wir die Daten umwandeln, sodass wir sie darstellen können?
+## https://pollev.com/jandix570
 
-### Frontend/Design Team
-- Wie stellen wir die Daten dar?
+1. Was ist ein Server?
+
+## Was ist ein Server? {.columns-2}
+
+### Wie sehen CorrelAid Server aus?
+
+- Ubuntu 16.04/18.04
+- NGINX (Webserver)
+- RStudio
+- Jupyter Notebooks
+- Node JS
+- SQL (Maria DB/Postgres)
+
+### Wo bekommt man das?
+
+- Amazon Web Services
+- Google Cloud
+- Microsoft Azure
+
+- BWCloud
+
+
+## Node JS
+
+
+
+
+
+# Client (Frontend)
+
+## https://pollev.com/jandix570
+
+1. Was ist ein Frontend?
+
+## Wie kann ein Frontend aussehen?
+
+- das Frontend kann 
+
+
+
+
