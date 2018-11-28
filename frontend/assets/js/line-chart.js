@@ -47,7 +47,7 @@ $.get(baseURL + '/timeline')
 // get facebook data
 $.get(baseURL + '/facebook')
     .done(function (response) {
-        addDataSet(lineChart, response.data, 'Facebook', '#0e1f56')
+        addDataSet(lineChart, response.data, 'Facebook', '#0e1f56');
     });
 
 // get twitter data
