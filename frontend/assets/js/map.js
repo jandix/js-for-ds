@@ -54,19 +54,5 @@ addDataPoint(circles, projection, 9.1732384, 47.6779496, 10);
 
 
 // YOUR CODE GOES BETWEEN THIS COMMENTS
-$.get('https://api.correlaid.org/local-chapters')
-    .done(function (response) {
-        response.data.forEach(function (city) {
-            var baseURL = 'https://nominatim.openstreetmap.org/search/';
-            var params = {
-                city: city.city,
-                country: city.country,
-                format: 'json'
-            };
-            $.get(baseURL, params)
-                .done(function (response) {
-                    addDataPoint(circles, projection, response[0].lon, response[0].lat, city.size);
-                });
-        });
-    });
+
 // YOUR CODE GOES BETWEEN THIS COMMENTS

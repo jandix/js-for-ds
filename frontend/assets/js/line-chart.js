@@ -57,8 +57,5 @@ $.get(baseURL + '/twitter')
     });
 
 // YOUR CODE GOES BETWEEN THIS COMMENTS
-$.get(baseURL + '/mailchimp')
-    .done(function (response) {
-        addDataSet(lineChart, response.data, 'Mailchimp', '#ffa500');
-    });
+
 // YOUR CODE GOES BETWEEN THIS COMMENTS
