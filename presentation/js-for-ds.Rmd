@@ -39,7 +39,9 @@ knitr::include_graphics('images/communication.svg')
 
 ## Warum eigentlich JavaScript?
 
-
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/why.jpg')
+```
 
 ## Ein paar Grundlagen (1)
 
@@ -86,11 +88,20 @@ twitterTimeLine.likes = 32;
 ## Ein paar Grundlagen (3)
 
 ```js
-// map
-twitterTimeLine.parsedDate = twitterTimeLine.date.map(function (e) { return new Date(e) });
+// define a function
+function adder (a, b) {
+  return a + b;
+}
 
-// reduce
-twitterTimeLine.followerSum = twitterTimeLine.follower.reduce(function (a, b) { return a + b }, 0)
+// creates a new array with the results of calling a function on every element in an array
+twitterTimeLine.parsedDate = twitterTimeLine.date.map(function (e) { 
+  return new Date(e) 
+});
+
+// executes a reducer function on each member of the array resulting in a single output value
+twitterTimeLine.followerSum = twitterTimeLine.follower.reduce(function (a, b) { 
+  return a + b 
+}, 0);
 ``` 
 
 
@@ -141,23 +152,105 @@ const pi = 3.1415; // does not work for childrens of objects
 
 - BWCloud
 
-
-## Node JS
-
-
-
-
-
 # Client (Frontend)
 
 ## https://pollev.com/jandix570
 
 1. Was ist ein Frontend?
 
-## Wie kann ein Frontend aussehen?
+## Was ist der Client?
 
-- das Frontend kann 
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/frameworks.jpg')
+```
+
+## GUI & SPAs
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/spas.jpg')
+```
+
+## CSS Frameworks & DOM Manipulation
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/css.jpg')
+```
+
+## Visualisation Frameworks
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/visualisation.jpg')
+```
+
+## Non-blocking/Asynchronous
+
+```{r, out.width='87%', fig.align='center'}
+knitr::include_graphics('images/non-blocking.svg')
+```
+
+## Asynchronous Code & Callbacks (1)
+
+```js
+$.get('https://api.correlaid.org/facebook')
+    .done(function (response) {
+        console.info('Success: Facebook data are successfully fetched.');
+        addDataSet(lineChart, response.data, 'Facebook', '#0e1f56');
+    })
+    .fail(function() {
+        console.info('Error: Could not fetch Facbook data.')
+    });
+```
+
+## Asynchronous Code & Callbacks (2)
+
+```js
+var URL = 'https://nominatim.openstreetmap.org/search/';
+var params = {
+    city: 'Mannheim',
+    country: 'Germany,
+    format: 'json'
+};
+$.get(URL, params)
+    .done(function (response) {
+        console.log('Lat: ' + response[0].lat + ', Lon: ' + response[0].lon);
+    });
+```
+
+## DIY (1)
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('images/diy.jpg')
+```
+
+## DIY (2)
+
+### Line Chart
+1. Öffne die Datei `frontend/assets/js/line-chart.js` in einem Text-Editior deiner Wahl.
+2. Lade die Zeitreihe aus dem Endpunkt `/mailchimp`.
+3. Visualisiere die Zeitreihe aus der vorherigen Aufgabe mit Hilfe der `addDataSet()` Funktion.
+ 
+### Karte
+1. Öffne die Datei `frontend/assets/js/map.js` in einem Text-Editior deiner Wahl.
+2. Lade die Standorte der Lokal Chapters aus dem Endpunkt `/local-chapters`.
+3. Lade für jede Stadt die Koordinaten aus der OpenStreetMap API herunter.
+4. Visualisiere die Standorte aus der vorherigen Aufgabe mit Hilfe der `addDataPoint()` Funktion.
+
+## Ressourcen {.columns-2}
+
+### Frameworks
+- [jQuery](https://api.jquery.com/)
+- [Chart JS](https://www.chartjs.org/)
+- [D3 JS](https://d3js.org/)
+- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+- [Material CSS](https://materializecss.com/)
+
+### Online Kurse
+- [JavaScript lernen (kostenlos)](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Vue lernen (Udemy)](https://www.udemy.com/vuejs-2-the-complete-guide/)
+- [React lernen (Udemy)](https://www.udemy.com/react-the-complete-guide-incl-redux/)
+- [Angular lernen (Udemy)](https://www.udemy.com/angular-essentials-angular-2-angular-4-with-typescript/)
+- [Node JS lernen (Udemy)](https://www.udemy.com/nodejs-the-complete-guide/)
 
 
-
+# Vielen Dank!
 
