@@ -37,3 +37,5 @@ npm run prod
 ```
 
 ## Frontend
+
+You can edit the frontend files with a regular text editor of you choice. Examples are [Sublime](https://www.sublimetext.com/), [Notepad++](https://notepad-plus-plus.org/) or [Atom](https://atom.io/). You can view the results in your favorite browser by opening the `index.html` file. Every time, you make a change you have to reload the page using `CTRL + F5`.
