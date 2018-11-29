@@ -1,7 +1,7 @@
 ---
 title: "Vom Backend zum Frontend"
 subtitle: "JavaScript for Data Scientists"
-author: "Frie Preu & Jan Dix"
+author: "Jan Dix & Frie Preu"
 date: "02/08/2018"
 output: 
   ioslides_presentation:
@@ -139,16 +139,24 @@ Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
 
 1. Was ist ein Server?
 
+## Was ist ein Server?
+
+1. "Ein Server als Software ist ein Programm, das im Client-Server-Modell mit einem anderen Programm, dem Client (englisch für Kunde), kommuniziert." ([Wikipedia](https://de.wikipedia.org/wiki/Server)) --> Server als Software können auch "lokal" laufen (z.B. Jupyter Notebooks)
+
+2. "Ein Hardware-Server, siehe Hostrechner, ist ein Computer, auf dem ein oder mehrere Server (Software) laufen." [Wikipedia](https://de.wikipedia.org/wiki/Server)) --> Physische oder virtuelle Maschinen (VMs)
+
 ## Was ist ein Server? {.columns-2}
 
-### Wie sehen CorrelAid Server aus?
+### Wie sehen Server bei CorrelAid aus? 
 
-- Ubuntu 16.04/18.04
-- NGINX (Webserver)
-- RStudio
-- Jupyter Notebooks
-- Node JS
-- SQL (Maria DB/Postgres)
+#### "Hardware"
+- Virtuelle Machinen mit Ubuntu 16.04/18.04 bei BWCloud
+
+#### Server Software
+  - NGINX (Webserver)
+  - RStudio (Software)
+  - Node JS
+  - SQL (Maria DB/Postgres)
 
 ### Wo bekommt man das?
 
@@ -157,6 +165,40 @@ Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
 - Microsoft Azure
 
 - BWCloud
+
+## AWS VM Demo
+
+...
+
+[Hack it like Hollywood](https://itsfoss.com/hollywood-hacker-screen/)
+
+## Serveradministration 
+
+- Konsolenzugang via SSH
+- grafische Benutzeroberfläche (GUI)
+
+## Server als Software - NGINX
+
+```
+server {
+        server_name api.correlaid.org;
+                location / {
+                proxy_set_header  X-Real-IP  $remote_addr;
+                proxy_set_header  Host       $http_host;
+                proxy_pass        http://localhost:8000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_cache_bypass $http_upgrade;
+        }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.correlaid.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.correlaid.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+```
+
 
 # Client (Frontend)
 

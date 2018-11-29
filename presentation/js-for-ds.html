@@ -32,7 +32,7 @@
       // Author information
       presenters: [
             {
-        name:  'Frie Preu &amp; Jan Dix' ,
+        name:  'Jan Dix &amp; Frie Preu' ,
         company: '',
         gplus: '',
         twitter: '',
@@ -226,15 +226,28 @@ const pi = 3.1415; // does not work for childrens of objects</pre>
 <li>Was ist ein Server?</li>
 </ol>
 
-</article></slide><slide class=""><hgroup><h2>Was ist ein Server?</h2></hgroup><article  id="was-ist-ein-server" class="columns-2">
+</article></slide><slide class=""><hgroup><h2>Was ist ein Server?</h2></hgroup><article  id="was-ist-ein-server">
 
-<h3>Wie sehen CorrelAid Server aus?</h3>
+<ol>
+<li><p>&quot;Ein Server als Software ist ein Programm, das im Client-Server-Modell mit einem anderen Programm, dem Client (englisch für Kunde), kommuniziert.&quot; (<a href='https://de.wikipedia.org/wiki/Server' title=''>Wikipedia</a>) &#8211;&gt; Server als Software können auch &quot;lokal&quot; laufen (z.B. Jupyter Notebooks)</p></li>
+<li><p>&quot;Ein Hardware-Server, siehe Hostrechner, ist ein Computer, auf dem ein oder mehrere Server (Software) laufen.&quot; <a href='https://de.wikipedia.org/wiki/Server' title=''>Wikipedia</a>) &#8211;&gt; Physische oder virtuelle Maschinen (VMs)</p></li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Was ist ein Server?</h2></hgroup><article  id="was-ist-ein-server-1" class="columns-2">
+
+<h3>Wie sehen Server bei CorrelAid aus?</h3>
+
+<h4>&quot;Hardware&quot;</h4>
 
 <ul>
-<li>Ubuntu 16.04/18.04</li>
+<li>Virtuelle Machinen mit Ubuntu 16.04/18.04 bei BWCloud</li>
+</ul>
+
+<h4>Server Software</h4>
+
+<ul>
 <li>NGINX (Webserver)</li>
-<li>RStudio</li>
-<li>Jupyter Notebooks</li>
+<li>RStudio (Software)</li>
 <li>Node JS</li>
 <li>SQL (Maria DB/Postgres)</li>
 </ul>
@@ -247,6 +260,39 @@ const pi = 3.1415; // does not work for childrens of objects</pre>
 <li><p>Microsoft Azure</p></li>
 <li><p>BWCloud</p></li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2>AWS VM Demo</h2></hgroup><article  id="aws-vm-demo">
+
+<p>&#8230;</p>
+
+<p><a href='https://itsfoss.com/hollywood-hacker-screen/' title=''>Hack it like Hollywood</a></p>
+
+</article></slide><slide class=""><hgroup><h2>Serveradministration</h2></hgroup><article  id="serveradministration">
+
+<ul>
+<li>Konsolenzugang via SSH</li>
+<li>grafische Benutzeroberfläche (GUI)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Server als Software - NGINX</h2></hgroup><article  id="server-als-software---nginx">
+
+<pre >server {
+        server_name api.correlaid.org;
+                location / {
+                proxy_set_header  X-Real-IP  $remote_addr;
+                proxy_set_header  Host       $http_host;
+                proxy_pass        http://localhost:8000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection &#39;upgrade&#39;;
+                proxy_cache_bypass $http_upgrade;
+        }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.correlaid.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.correlaid.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Client (Frontend)</h2></hgroup><article  id="client-frontend">
 
