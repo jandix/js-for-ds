@@ -12,7 +12,7 @@ Download Node JS from the [official website](https://nodejs.org/en/download/). I
 
 #### Download Dependencies
 
-Before you can start the server you have to install the required dependencies. You can imagine the dependencies as packages in Python or R. The packages can be installed using npm. npm is similar to Python's package manager pip. Use the following command to install the dependencies. 
+Before you can start the server you have to install the required dependencies. You can imagine the dependencies as packages in Python or R. The packages can be installed using npm. npm is similar to Python's package manager pip. Open the command line or terminal and navigate to the backend folder. Use the following command to install the dependencies. 
 
 :warning: **You have to enter the backend folder first to execute the command.** 
 
@@ -20,15 +20,20 @@ Before you can start the server you have to install the required dependencies. Y
 npm install
 ```
 
-The command accesses the `package.json` and installs all packages that are listed under `dependencies` and `devDependencies`. The packages are downloaded and saved in the `node_modules` folder.
+The command accesses the `package.json` file and installs all packages that are listed under `dependencies` and `devDependencies`. The packages are downloaded and saved in the `node_modules` folder.
 
+#### Environments
 
+The server ships with two environments - development and production. The development environment allows to automatically restart the server every time a file of the application is changed. The production environment starts a simple node server. Following commands start the respective environments. Use `CTRL + C` to stop the environments. 
 
-#### Development environment
+Development environment: 
+```
+npm run dev
+```
 
-
-
-#### Productive environment
-
+Production environment: 
+```
+npm run prod
+```
 
 ## Frontend
