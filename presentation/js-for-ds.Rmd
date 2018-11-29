@@ -12,7 +12,9 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## https://pollev.com/jandix570
+## Mentimeter
+
+Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
 
 1. Was erwartest du vom Workshop?
 2. Welche "Sprachen" sprichst du?
@@ -33,9 +35,11 @@ knitr::include_graphics('images/communication.svg')
 
 # JavaScript
 
-## https://pollev.com/jandix570
+## Mentimeter
 
-1. Was verbindet ihr mit JavaScript?
+Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
+
+1. Was verbindest du mit JavaScript?
 
 ## Warum eigentlich JavaScript?
 
@@ -129,7 +133,9 @@ const pi = 3.1415; // does not work for childrens of objects
 
 # Server (Backend)
 
-## https://pollev.com/jandix570
+## Mentimeter
+
+Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
 
 1. Was ist ein Server?
 
@@ -154,7 +160,9 @@ const pi = 3.1415; // does not work for childrens of objects
 
 # Client (Frontend)
 
-## https://pollev.com/jandix570
+## Mentimeter
+
+Gehe auf [www.menti.com](www.menti.com) und gebe den Code `78 31 82` ein.
 
 1. Was ist ein Frontend?
 
